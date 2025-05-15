@@ -1,13 +1,18 @@
 package Example1;
 
-public class Main {
+import java.util.Scanner;
+
+class Main {
     public static void main(String[] args) {
-        Student student1 = new Student();
-        student1.surname = "Иванов";
-        student1.age = 19;
-        student1.averageMark = 8.2;
-        System.out.println(student1.calculateScolarShip());
-        System.out.println(student1.baseScolarship);
-        Student.raseScholarship(1.2);
+        Scanner scan = new Scanner(System.in);
+        Abiturient person = new Abiturient();
+        person.surname = scan.next();
+        person.name = scan.next();
+        person.math = scan.nextInt();
+        person.physics = scan.nextInt();
+        person.lang = scan.nextInt();
+        System.out.printf("%.1f\n",person.average());
+        person.print();
+
     }
 }
