@@ -15,6 +15,10 @@ class Employee {
     }
 
     void show() {
-        System.out.printf("%s;%s;%d;%d", lastName, sex, age, salary);
+        System.out.printf("%s;%s;%d;%d\n", lastName, sex, age, salary);
+    }
+
+    void changeSLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

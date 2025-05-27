@@ -16,6 +16,8 @@ class MainEmployee {
         }
 
         employee.show();
+        employee.changeSLastName("Петров");
+        employee.show();
 
     }
 }
