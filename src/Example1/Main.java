@@ -1,5 +1,9 @@
 package Example1;
 
+import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.format.DateTimeParseException;
+
 public class Main {
     public static void main(String[] args) {
         Student[] gruppa = new Student[3];
@@ -10,6 +14,19 @@ public class Main {
             if(gruppa[i] != null) { // убедимся, что объект действительно создан
                 System.out.println(gruppa[i].calculateScholarship()); // Вывод стипендии каждого стедента
             }
+        }
+        //Test for converting
+        String str = "2025-11-13T17:25:00Z";
+        System.out.println(StringToTimestamp(str));
+    }
+
+
+    private static Timestamp StringToTimestamp(String string) {
+        try {
+            Instant instant = Instant.parse(string);
+            return Timestamp.from(instant);
+        } catch (DateTimeParseException e) {
+            return null;
         }
     }
 }
